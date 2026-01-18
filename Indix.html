@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cybele 3D Mascara | ماسكرا سيبال 3D الأصلية</title>
+  <meta name="description" content="ماسكرا Cybele 3D الأصلية 100% لرفع وتكثيف وتطويل الرموش. عرض خاص: 349 بدل 450 + شحن سريع." />
+
+  <style>
+    :root{
+      --bg:#070A12;
+      --card:rgba(255,255,255,.06);
+      --card2:rgba(255,255,255,.08);
+      --stroke:rgba(255,255,255,.12);
+      --text:#EAF0FF;
+      --muted:#B7C0D9;
+      --brand:#AF4977;
+      --brand2:#8F2F5F;
+      --gold:#E7C36A;
+      --ok:#35D07F;
+      --warn:#FFCF5A;
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:radial-gradient(1100px 700px at 20% -10%, rgba(175,73,119,.35), transparent 60%),
+                               radial-gradient(900px 600px at 90% 0%, rgba(231,195,106,.18), transparent 55%),
+                               radial-gradient(900px 600px at 50% 110%, rgba(143,47,95,.25), transparent 55%),
+                               var(--bg);
+              color:var(--text);
+              font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
+              overflow-x:hidden;
+    }
+
+    a{color:inherit}
+    .wrap{max-width:1050px;margin:0 auto;padding:22px 16px 110px}
+
+    /* subtle animated background sparkle */
+    .bg-sparkles{
+      position:fixed; inset:0; pointer-events:none; z-index:-1; opacity:.35;
+      background:
+        radial-gradient(2px 2px at 12% 18%, rgba(255,255,255,.55), transparent 55%),
+        radial-gradient(2px 2px at 58% 22%, rgba(255,255,255,.35), transparent 55%),
+        radial-gradient(2px 2px at 86% 38%, rgba(255,255,255,.45), transparent 55%),
+        radial-gradient(2px 2px at 22% 72%, rgba(255,255,255,.30), transparent 55%),
+        radial-gradient(2px 2px at 78% 78%, rgba(255,255,255,.40), transparent 55%);
+      animation: twinkle 5s ease-in-out infinite;
+    }
+    @keyframes twinkle{
+      0%,100%{filter:brightness(1)}
+      50%{filter:brightness(1.25)}
+    }
+
+    /* header */
+    .topbar{
+      display:flex; gap:12px; align-items:center; justify-content:space-between;
+      padding:14px 16px; border:1px solid var(--stroke); background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border-radius:var(--radius); box-shadow: var(--shadow);
+      position:sticky; top:10px; z-index:20; backdrop-filter: blur(10px);
+    }
+    .brand{
+      display:flex; gap:12px; align-items:center;
+    }
+    .logo{
+      width:44px;height:44px;border-radius:14px;
+      background: radial-gradient(circle at 30% 25%, rgba(231,195,106,.95), rgba(175,73,119,.75) 55%, rgba(143,47,95,.55));
+      box-shadow: 0 12px 25px rgba(175,73,119,.25);
+      position:relative; overflow:hidden;
+    }
+    .logo:after{
+      content:""; position:absolute; inset:-40%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
+      transform: rotate(20deg);
+      animation: sheen 2.6s ease-in-out infinite;
+    }
+    @keyframes sheen{
+      0%{left:-80%}
+      60%{left:120%}
+      100%{left:120%}
+    }
+
+    .brand h1{margin:0;font-size:15px;line-height:1.15}
+    .brand p{margin:2px 0 0;color:var(--muted);font-size:12px}
+
+    .cta-row{display:flex;gap:10px;align-items:center}
+    .pill{
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.06);
+      padding:8px 10px; border-radius:999px; font-size:12px; color:var(--muted);
+      display:flex; gap:8px; align-items:center;
+    }
+    .btn{
+      border:none; cursor:pointer; user-select:none;
+      padding:10px 12px; border-radius:999px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      color:white; font-weight:800; letter-spacing:.2px;
+      box-shadow: 0 14px 35px rgba(175,73,119,.25);
+      transition: transform .15s ease, filter .15s ease;
+      display:flex; gap:8px; align-items:center;
+    }
+    .btn:hover{transform: translateY(-1px); filter:brightness(1.05)}
+    .btn:active{transform: translateY(0px) scale(.99)}
+
+    /* hero layout */
+    .grid{
+      display:grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap:16px;
+      margin-top:16px;
+      align-items:start;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      .topbar{flex-wrap:wrap}
+      .cta-row{width:100%;justify-content:space-between}
+    }
+
+    .card{
+      border:1px solid var(--stroke);
+      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.05));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .card.pad{padding:16px}
+
+    /* image gallery */
+    .gallery{
+      padding:14px;
+    }
+    .main-img{
+      width:100%;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.25);
+      overflow:hidden;
+      position:relative;
+      aspect-ratio: 1 / 1;
+      display:flex; align-items:center; justify-content:center;
+    }
+    .main-img img{
+      width:100%; height:100%; object-fit:cover; display:block;
+      transform: scale(1.02);
+      transition: transform .35s ease, filter .35s ease, opacity .2s ease;
+    }
+    .main-img:hover img{transform: scale(1.06)}
+    .badge{
+      position:absolute; top:12px; left:12px;
+      background: rgba(7,10,18,.55);
+      border:1px solid rgba(255,255,255,.14);
+      padding:8px 10px;
+      border-radius: 999px;
+      font-weight:800;
+      display:flex; gap:8px; align-items:center;
+      backdrop-filter: blur(10px);
+    }
+    .badge span{color:var(--gold)}
+    .thumbs{
+      display:flex; gap:10px; margin-top:12px; overflow:auto; padding-bottom:6px;
+      scrollbar-width: thin;
+    }
+    .thumb{
+      width:78px; height:78px; border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      flex:0 0 auto;
+      overflow:hidden; cursor:pointer;
+      position:relative;
+      transition: transform .15s ease, border-color .15s ease, filter .15s ease;
+    }
+    .thumb img{width:100%; height:100%; object-fit:cover; display:block; filter:saturate(1.05)}
+    .thumb:hover{transform: translateY(-1px); border-color: rgba(231,195,106,.45)}
+    .thumb.active{
+      border-color: rgba(231,195,106,.8);
+      box-shadow: 0 12px 26px rgba(231,195,106,.12);
+    }
+    .hint{
+      color:var(--muted); font-size:12px; margin-top:10px;
+      display:flex; gap:8px; align-items:center;
+    }
+
+    /* product info */
+    .kicker{
+      display:inline-flex; gap:8px; align-items:center;
+      background: rgba(231,195,106,.12);
+      border:1px solid rgba(231,195,106,.22);
+      color:#FFE9A6;
+      padding:8px 10px;
+      border-radius: 999px;
+      font-weight:700;
+      font-size:12px;
+    }
+    .title{
+      margin:10px 0 8px;
+      font-size:22px;
+      line-height:1.35;
+    }
+    .desc{color:var(--muted); margin:0 0 12px; line-height:1.9}
+    .priceBox{
+      margin-top:12px;
+      border:1px solid rgba(255,255,255,.14);
+      background: linear-gradient(135deg, rgba(175,73,119,.16), rgba(231,195,106,.10));
+      border-radius: 16px;
+      padding:14px;
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap:10px;
+      align-items:center;
+    }
+    .prices{display:flex; gap:10px; flex-wrap:wrap; align-items:baseline}
+    .before{color:#C9D2ED; opacity:.75; text-decoration: line-through; font-weight:700}
+    .after{font-size:26px; font-weight:900}
+    .discount{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 10px; border-radius:999px;
+      background: rgba(53,208,127,.12);
+      border:1px solid rgba(53,208,127,.25);
+      color:#BFF7D9;
+      font-weight:900;
+      white-space:nowrap;
+    }
+    .mini{
+      margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;
+      color:var(--muted); font-size:12px;
+    }
+    .mini .tag{
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      padding:8px 10px; border-radius:999px;
+      display:flex; gap:8px; align-items:center;
+    }
+
+    /* sections */
+    .section{margin-top:16px}
+    .section h2{
+      margin:0 0 10px;
+      font-size:16px;
+      display:flex; gap:10px; align-items:center;
+    }
+    .section h2 .dot{
+      width:9px;height:9px;border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, var(--gold), var(--brand));
+      box-shadow: 0 0 0 6px rgba(231,195,106,.08);
+    }
+    .list{
+      display:grid; gap:10px;
+    }
+    .li{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:12px 12px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      background: rgba(255,255,255,.05);
+    }
+    .li b{color:#F6F8FF}
+    .li .ico{width:26px;height:26px;border-radius:10px; display:flex;align-items:center;justify-content:center;
+             background: rgba(175,73,119,.18); border:1px solid rgba(175,73,119,.25)}
+    .li p{margin:0;color:var(--muted);line-height:1.8}
+
+    /* FAQ accordion */
+    .faq{display:grid; gap:10px}
+    details{
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      background: rgba(255,255,255,.05);
+      overflow:hidden;
+    }
+    summary{
+      list-style:none; cursor:pointer;
+      padding:12px 12px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      font-weight:800;
+    }
+    summary::-webkit-details-marker{display:none}
+    .faq p{margin:0; padding:0 12px 12px; color:var(--muted); line-height:1.9}
+    .chev{transition:transform .2s ease}
+    details[open] .chev{transform: rotate(180deg)}
+
+    /* reviews */
+    .reviews{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:10px;
+    }
+    @media (max-width: 700px){ .reviews{grid-template-columns:1fr} }
+    .rev{
+      border:1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border-radius: 16px;
+      padding:12px;
+      position:relative;
+      overflow:hidden;
+    }
+    .rev:before{
+      content:""; position:absolute; inset:-60% -60% auto auto;
+      width:220px;height:220px;border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, rgba(231,195,106,.16), transparent 60%);
+      transform: rotate(25deg);
+    }
+    .rev .top{
+      display:flex; justify-content:space-between; align-items:center; gap:10px;
+      margin-bottom:8px; position:relative;
+    }
+    .stars{color:var(--gold); letter-spacing:1px}
+    .who{color:var(--muted); font-size:12px}
+    .rev p{margin:0; color:#DCE4FF; line-height:1.8; position:relative}
+
+    /* authenticity block + flying lashes */
+    .auth{
+      border:1px solid rgba(231,195,106,.22);
+      background: linear-gradient(135deg, rgba(231,195,106,.13), rgba(175,73,119,.10));
+      border-radius: 18px;
+      padding:16px;
+      position:relative;
+      overflow:hidden;
+    }
+    .auth h3{margin:0 0 8px; font-size:16px}
+    .auth p{margin:0; color:var(--muted); line-height:1.95}
+    .lash{
+      position:absolute; inset:auto auto -10px -10px;
+      font-size:28px; opacity:.25;
+      filter: drop-shadow(0 10px 30px rgba(175,73,119,.25));
+      animation: floaty 4.2s ease-in-out infinite;
+    }
+    .lash.l2{left:auto; right:-10px; bottom:8px; font-size:32px; animation-duration: 5.5s; opacity:.22}
+    .lash.l3{left:35%; bottom:-12px; font-size:26px; animation-duration: 6.3s; opacity:.18}
+    @keyframes floaty{
+      0%,100%{transform: translateY(0) translateX(0) rotate(0deg)}
+      50%{transform: translateY(-12px) translateX(10px) rotate(-6deg)}
+    }
+
+    /* order form placeholder */
+    .orderBox{
+      border:1px dashed rgba(255,255,255,.22);
+      background: rgba(255,255,255,.04);
+      border-radius: 18px;
+      padding:14px;
+    }
+    .orderBox .note{
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.9;
+      margin-top:8px;
+    }
+
+    /* sticky footer CTA */
+    .sticky{
+      position:fixed; left:0; right:0; bottom:0;
+      background: linear-gradient(180deg, rgba(7,10,18,0), rgba(7,10,18,.85) 20%, rgba(7,10,18,.95));
+      padding:14px 16px;
+      z-index:30;
+    }
+    .sticky .bar{
+      max-width:1050px; margin:0 auto;
+      display:flex; gap:12px; align-items:center; justify-content:space-between;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      border-radius: 16px;
+      padding:10px 12px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 60px rgba(0,0,0,.55);
+    }
+    .sticky .bar .sprice{font-weight:900}
+    .sticky .bar .smuted{color:var(--muted); font-size:12px}
+    .sticky .bar .btn{padding:10px 14px}
+
+    /* reveal animation */
+    .reveal{opacity:0; transform: translateY(10px); transition: .55s ease}
+    .reveal.show{opacity:1; transform: translateY(0)}
+  </style>
+</head>
+
+<body>
+  <div class="bg-sparkles"></div>
+
+  <div class="wrap">
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Cybele 3D Mascara ✨</h1>
+          <p>أصلي 100% • ضمان جودة • شحن سريع</p>
+        </div>
+      </div>
+      <div class="cta-row">
+        <div class="pill">🛡️ <b style="color:#fff">أوريجنال</b> • مضمون</div>
+        <button class="btn" type="button" onclick="scrollToOrder()">اطلبي الآن 💖</button>
+      </div>
+    </div>
+
+    <!-- HERO (Images فوق + تحتها الوصف + تحتها السعر) -->
+    <div class="grid">
+      <!-- Gallery -->
+      <div class="card gallery reveal">
+        <div class="main-img" id="mainWrap">
+          <img id="mainImg" src="https://i.postimg.cc/N0sGd0Xt/325169987_1295886207860499_7127583646350157942_n.jpg" alt="Cybele 3D Mascara" />
+          <div class="badge">🔥 <span>خصم 22.44%</span></div>
+        </div>
+
+        <div class="thumbs" id="thumbs" aria-label="صور المنتج">
+          <!-- thumbs injected by JS -->
+        </div>
+
+        <div class="hint">👆 دوس على أي صورة صغيرة علشان تظهر مكان الصورة الكبيرة</div>
+      </div>
+
+      <!-- Info -->
+      <div class="card pad reveal">
+        <div class="kicker">👁️‍🗨️ تأثير 3D للرموش • طول + كثافة + رفع</div>
+        <h2 class="title">ماسكرا <span style="color:var(--gold)">Cybele 3D</span> — شكل رموش شيك ومليان في ثواني</h2>
+
+        <p class="desc">
+          لو عايزة رموش شكلها <b>مرفوع وكثيف</b> من غير تكتّل… دي هتديكي تأثير 3D مرتب:
+          <b>تطويل + تكثيف + فصل</b> مع لون أسود فخم، ومظهر نهائي يليق باللوك اليومي أو المناسبات.
+        </p>
+
+        <div class="priceBox">
+          <div>
+            <div class="prices">
+              <span class="before">450 جنيه</span>
+              <span class="after">349 جنيه</span>
+              <span class="discount">✅ وفر 101 جنيه</span>
+            </div>
+            <div class="mini">
+              <div class="tag">🚚 شحن سريع</div>
+              <div class="tag">💳 دفع عند الاستلام (حسب المتاح)</div>
+              <div class="tag">🛡️ ضمان الأصالة 100%</div>
+            </div>
+          </div>
+          <button class="btn" type="button" onclick="scrollToOrder()">اطلبي الآن ✨</button>
+        </div>
+
+        <div class="section" style="margin-top:14px">
+          <h2><span class="dot"></span>وصف سريع</h2>
+          <div class="list">
+            <div class="li">
+              <div class="ico">👁️</div>
+              <div>
+                <b>تأثير 3D</b>
+                <p>شكل رموش ممتلئ وطويل مع لمسة نهائية مرتبة.</p>
+              </div>
+            </div>
+            <div class="li">
+              <div class="ico">✨</div>
+              <div>
+                <b>فصل من غير تكتّل</b>
+                <p>تركيبة تساعد على التوزيع بالتدريج… طبقة ورا طبقة حسب اللي تحبيه.</p>
+              </div>
+            </div>
+            <div class="li">
+              <div class="ico">🖤</div>
+              <div>
+                <b>أسود داكن</b>
+                <p>يبان من أول تمريرة ويكمل اللوك بشكل فخم.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ORDER FORM -->
+    <div class="section reveal" id="order">
+      <div class="card pad">
+        <h2><span class="dot"></span>اطلبي دلوقتي</h2>
+
+        <div class="orderBox">
+          <!-- 👇👇 هنا بتحطي فورم EasyOrders (نموذج الطلب/زر الشراء) -->
+          <!-- الصقي كود EasyOrders هنا -->
+          <div style="padding:14px;border-radius:14px;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.12);">
+            <b>⬅️ الصقي هنا كود الفورم بتاع EasyOrders</b>
+            <div class="note">
+              لو عندك كود الفورم، انسخيه وحطيه هنا مكان البلوك ده.
+            </div>
+          </div>
+          <!-- 👆👆 -->
+          <div class="note">💡 نصيحة: خلي الفورم بعد السعر مباشرة (زي ما هو هنا) علشان التحويل يبقى أعلى.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INGREDIENTS / HIGHLIGHTS -->
+    <div class="section reveal">
+      <div class="card pad">
+        <h2><span class="dot"></span>المكونات البارزة (Highlights)</h2>
+        <div class="list">
+          <div class="li">
+            <div class="ico">🧬</div>
+            <div>
+              <b>بوليمرات تثبيت مرنة</b>
+              <p>تساعد على ثبات الشكل ورفع الرموش من غير ما تسيب إحساس تقيل.</p>
+            </div>
+          </div>
+          <div class="li">
+            <div class="ico">🖤</div>
+            <div>
+              <b>صبغات سوداء مكثفة</b>
+              <p>لون أسود داكن يدي نظرة حادة وواضحة من أول طبقة.</p>
+            </div>
+          </div>
+          <div class="li">
+            <div class="ico">💧</div>
+            <div>
+              <b>مكوّنات مُلطّفة</b>
+              <p>تدّي انزلاق سهل للفرشاة علشان التوزيع يبقى متساوي.</p>
+            </div>
+          </div>
+          <div class="li">
+            <div class="ico">🪶</div>
+            <div>
+              <b>ملمس خفيف</b>
+              <p>يقلّل التكتّل ويدّي فصل أحلى للرموش.</p>
+            </div>
+          </div>
+        </div>
+        <div class="note" style="color:var(--muted);margin-top:10px">
+          *ملاحظة: لو عندك صورة ظهر العبوة/قائمة المكونات (INCI) ابعتهالي وأنا أكتبها حرفيًا بدقة.
+        </div>
+      </div>
+    </div>
+
+    <!-- ROUTINE -->
+    <div class="section reveal">
+      <div class="card pad">
+        <h2><span class="dot"></span>روتين الاستخدام (خطوات بسيطة)</h2>
+        <div class="list">
+          <div class="li">
+            <div class="ico">1️⃣</div>
+            <div>
+              <b>حضّري الرموش</b>
+              <p>اتأكدي إن الرموش ناشفة ونظيفة (من غير زيوت/كريم). لو بتحبي، استخدمي Curler قبلها.</p>
+            </div>
+          </div>
+          <div class="li">
+            <div class="ico">2️⃣</div>
+            <div>
+              <b>الطبقة الأولى</b>
+              <p>من الجذور للأطراف بحركة Zigzag خفيفة علشان تمسكي كل شعيرة.</p>
+            </div>
+          </div>
+          <div class="li">
+            <div class="ico">3️⃣</div>
+            <div>
+              <b>طبقة تانية (اختياري)</b>
+              <p>استني 20–30 ثانية وبعدين زوّدي طبقة تانية للكثافة… من غير ما تكتري.</p>
+            </div>
+          </div>
+          <div class="li">
+            <div class="ico">4️⃣</div>
+            <div>
+              <b>تشطيب وفصل</b>
+              <p>لو فيه تكتّل بسيط، مرّري الفرشاة بطرفها على الأطراف للفصل.</p>
+            </div>
+          </div>
+          <div class="li">
+            <div class="ico">🧼</div>
+            <div>
+              <b>إزالة الماسكرا</b>
+              <p>استخدمي مزيل ميكب عيون/ماء ميسيلار، وحطيه على قطنة 10 ثواني قبل المسح بلطف.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUTHENTICITY -->
+    <div class="section reveal">
+      <div class="auth">
+        <div class="lash">🫧👁️‍🗨️✨</div>
+        <div class="lash l2">🫧🖤👁️‍🗨️</div>
+        <div class="lash l3">✨👁️‍🗨️🫧</div>
+
+        <h3>🛡️ أصلي ومضمون 100% — أوريجنال</h3>
+        <p>
+          إحنا بنأكد لك بكل وضوح: المنتج <b style="color:#fff">أصلي 100%</b> ومضمون.
+          أي قطعة بتطلع للعميل بتكون <b style="color:#fff">سليمة ومختومة</b> — وتجربة شراء آمنة.
+          <br/>
+          <span style="color:#fff;font-weight:800">لو وصلك أي مشكلة في العبوة/المنتج، هنساعدك فورًا.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- WHY BUY -->
+    <div class="section reveal">
+      <div class="card pad">
+        <h2><span class="dot"></span>ليه تشتري من متجرنا؟</h2>
+        <div class="list">
+          <div class="li">
+            <div class="ico">🛡️</div>
+            <div>
+              <b>ضمان أصالة</b>
+              <p>منتجاتنا أوريجنال ومضمونة 100% — أهم حاجة عندنا الثقة.</p>
+            </div>
+          </div>
+          <div class="li">
+            <div class="ico">🚚</div>
+            <div>
+              <b>شحن سريع وتغليف محترم</b>
+              <p>التغليف يكون آمن علشان المنتج يوصلك سليم.</p>
+            </div>
+          </div>
+          <div class="li">
+            <div class="ico">💬</div>
+            <div>
+              <b>دعم سريع</b>
+              <p>لو محتاجة مساعدة في الاختيار أو عندك سؤال… إحنا معاك.</p>
+            </div>
+          </div>
+          <div class="li">
+            <div class="ico">💎</div>
+            <div>
+              <b>تجربة شراء شيك</b>
+              <p>وصف واضح + صور حقيقية + اهتمام بالتفاصيل.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="section reveal">
+      <div class="card pad">
+        <h2><span class="dot"></span>أسئلة شائعة (FAQ)</h2>
+        <div class="faq">
+          <details>
+            <summary>هل الماسكرا مناسبة للاستخدام اليومي؟ <span class="chev">⌄</span></summary>
+            <p>أيوه جدًا… شكلها شيك ومش تقيلة، وتقدري تتحكمي في الكثافة حسب عدد الطبقات.</p>
+          </details>
+
+          <details>
+            <summary>هل بتعمل تكتّل؟ <span class="chev">⌄</span></summary>
+            <p>لو اتطبقت طبقات خفيفة وبينهم ثواني بسيطة، هتدي فصل حلو جدًا. بلاش تكتري طبقات بسرعة ورا بعض.</p>
+          </details>
+
+          <details>
+            <summary>هل بتناسب العيون الحساسة؟ <span class="chev">⌄</span></summary>
+            <p>كتير بيستخدموها عادي، لكن لو عندك حساسية شديدة يفضّل تجربة سريعة أو استشارة طبيبك.</p>
+          </details>
+
+          <details>
+            <summary>إزاي أشيلها بسهولة؟ <span class="chev">⌄</span></summary>
+            <p>مزيل ميكب عيون/ميسيلار: حطي القطنة 10 ثواني وبعدين امسحي بلطف من غير فرك قوي.</p>
+          </details>
+
+          <details>
+            <summary>هل هتدي طول ولا كثافة؟ <span class="chev">⌄</span></summary>
+            <p>الاتنين: أول طبقة للطول والفصل، تاني طبقة للكثافة… وده اللي بيدي شكل 3D.</p>
+          </details>
+
+          <details>
+            <summary>هل المنتج أصلي؟ <span class="chev">⌄</span></summary>
+            <p><b style="color:#fff">أيوه، أصلي ومضمون 100%</b> — وده وعدنا قبل أي بيع.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- REVIEWS -->
+    <div class="section reveal">
+      <div class="card pad">
+        <h2><span class="dot"></span>آراء العملاء (20 تقييم شيك)</h2>
+        <div class="reviews" id="reviews">
+          <!-- reviews injected by JS -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Sticky CTA -->
+  <div class="sticky">
+    <div class="bar">
+      <div>
+        <div class="sprice">349 جنيه <span class="smuted">بدل 450 • خصم 22.44%</span></div>
+        <div class="smuted">🛡️ أوريجنال 100% • 🚚 شحن سريع</div>
+      </div>
+      <button class="btn" type="button" onclick="scrollToOrder()">اطلبي الآن 💖</button>
+    </div>
+  </div>
+
+  <script>
+    // صور المنتج
+    const images = [
+      "https://i.postimg.cc/N0sGd0Xt/325169987_1295886207860499_7127583646350157942_n.jpg",
+      "https://i.postimg.cc/Zqwb2hPT/1_(1).jpg",
+      "https://i.postimg.cc/jjMxmr6d/517Nfmf_T0L.jpg",
+      "https://i.postimg.cc/3wt8VHj8/7beba849_d0b0_4d05_9449_4119e070f05b.jpg",
+      "https://i.postimg.cc/mrmLJG3Z/Cybele_3D_Mascara_012_768x768_1.jpg"
+    ];
+
+    // إنشاء thumbnails + تبديل الصورة الكبيرة
+    const mainImg = document.getElementById("mainImg");
+    const thumbsWrap = document.getElementById("thumbs");
+
+    function setMain(src, el){
+      mainImg.style.opacity = "0.15";
+      mainImg.style.filter = "blur(2px)";
+      setTimeout(() => {
+        mainImg.src = src;
+        mainImg.onload = () => {
+          mainImg.style.opacity = "1";
+          mainImg.style.filter = "blur(0px)";
+        };
+      }, 120);
+
+      document.querySelectorAll(".thumb").forEach(t => t.classList.remove("active"));
+      if (el) el.classList.add("active");
+    }
+
+    images.forEach((src, i) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "thumb" + (i === 0 ? " active" : "");
+      b.setAttribute("aria-label", "عرض الصورة رقم " + (i+1));
+      b.innerHTML = `<img src="${src}" alt="صورة المنتج ${i+1}" loading="lazy">`;
+      b.addEventListener("click", () => setMain(src, b));
+      thumbsWrap.appendChild(b);
+    });
+
+    // Reviews (20)
+    const reviews = [
+      ["★★★★★", "سارة", "بجد فرقت في شكل الرموش من أول استخدام… لونها أسود فخم."],
+      ["★★★★★", "منة", "بتفصل الرموش حلو ومفيش تكتّل لو طبقات خفيفة."],
+      ["★★★★★", "نور", "ثبات ممتاز طول اليوم وشكل طبيعي شيك."],
+      ["★★★★★", "رحمة", "أحلى حاجة إنها مش تقيلة على العين."],
+      ["★★★★★", "ريم", "الفرشاة بتوصل لكل شعيرة… نتيجة 3D فعلاً."],
+      ["★★★★★", "آية", "التغليف محترم ووصلت سليمة."],
+      ["★★★★★", "دينا", "طبقة واحدة تكفي لللوك اليومي… وطبقتين للمناسبات."],
+      ["★★★★★", "هبة", "بتدي طول ملحوظ والفصل جامد."],
+      ["★★★★★", "فاطمة", "مش بتسيح بسهولة… ممتازة."],
+      ["★★★★★", "مريم", "سعرها مقابل الجودة جامد."],
+      ["★★★★★", "ياسمين", "مفيش تكتّل… بس أهم حاجة ما تكسريش الطبقات بسرعة."],
+      ["★★★★★", "شيماء", "شكل العين بيبان واسع وجميل."],
+      ["★★★★★", "نادين", "حبيتها جدًا… هكررها أكيد."],
+      ["★★★★★", "بسمة", "اللون الأسود واضح من أول تمريرة."],
+      ["★★★★★", "إسراء", "بتتشال بسهولة بميسيلار من غير فرك."],
+      ["★★★★★", "رانيا", "النتيجة شبه رموش تركي بس بشكل طبيعي."],
+      ["★★★★★", "تقى", "مناسبة للاستخدام اليومي ومريحة."],
+      ["★★★★★", "جنى", "بتثبت ومش بتعمل تلطخ تحت العين."],
+      ["★★★★★", "شهد", "الفصل حلو جدًا واللوك شيك."],
+      ["★★★★★", "مي", "أوريجنال فعلًا… والتعامل محترم."]
+    ];
+    const reviewsWrap = document.getElementById("reviews");
+    reviews.forEach(r => {
+      const div = document.createElement("div");
+      div.className = "rev";
+      div.innerHTML = `
+        <div class="top">
+          <div class="stars">${r[0]}</div>
+          <div class="who">— ${r[1]}</div>
+        </div>
+        <p>${r[2]}</p>
+      `;
+      reviewsWrap.appendChild(div);
+    });
+
+    // Scroll to order
+    function scrollToOrder(){
+      const el = document.getElementById("order");
+      el.scrollIntoView({behavior:"smooth", block:"start"});
+    }
+
+    // Reveal on scroll (simple + جذاب)
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add("show"); io.unobserve(e.target); }
+      });
+    }, {threshold: .12});
+    document.querySelectorAll(".reveal").forEach(el=> io.observe(el));
+  </script>
+</body>
+</html>
