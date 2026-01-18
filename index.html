@@ -34,7 +34,7 @@
     }
 
     a{color:inherit}
-    .wrap{max-width:1050px;margin:0 auto;padding:22px 16px 110px}
+    .wrap{max-width:1050px;margin:0 auto;padding:22px 16px 60px}
 
     /* subtle animated background sparkle */
     .bg-sparkles{
@@ -90,17 +90,6 @@
       padding:8px 10px; border-radius:999px; font-size:12px; color:var(--muted);
       display:flex; gap:8px; align-items:center;
     }
-    .btn{
-      border:none; cursor:pointer; user-select:none;
-      padding:10px 12px; border-radius:999px;
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-      color:white; font-weight:800; letter-spacing:.2px;
-      box-shadow: 0 14px 35px rgba(175,73,119,.25);
-      transition: transform .15s ease, filter .15s ease;
-      display:flex; gap:8px; align-items:center;
-    }
-    .btn:hover{transform: translateY(-1px); filter:brightness(1.05)}
-    .btn:active{transform: translateY(0px) scale(.99)}
 
     /* hero layout */
     .grid{
@@ -113,7 +102,7 @@
     @media (max-width: 900px){
       .grid{grid-template-columns:1fr}
       .topbar{flex-wrap:wrap}
-      .cta-row{width:100%;justify-content:space-between}
+      .cta-row{width:100%;justify-content:flex-start}
     }
 
     .card{
@@ -198,32 +187,62 @@
       line-height:1.35;
     }
     .desc{color:var(--muted); margin:0 0 12px; line-height:1.9}
-    .priceBox{
+
+    /* PRICE BLOCK (شيك) */
+    .priceCard{
       margin-top:12px;
-      border:1px solid rgba(255,255,255,.14);
-      background: linear-gradient(135deg, rgba(175,73,119,.16), rgba(231,195,106,.10));
-      border-radius: 16px;
+      border:1px solid rgba(231,195,106,.24);
+      background:
+        radial-gradient(600px 240px at 20% 20%, rgba(231,195,106,.18), transparent 60%),
+        radial-gradient(600px 240px at 90% 90%, rgba(175,73,119,.18), transparent 60%),
+        linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border-radius: 18px;
       padding:14px;
-      display:grid;
-      grid-template-columns: 1fr auto;
-      gap:10px;
-      align-items:center;
+      position:relative;
+      overflow:hidden;
     }
-    .prices{display:flex; gap:10px; flex-wrap:wrap; align-items:baseline}
-    .before{color:#C9D2ED; opacity:.75; text-decoration: line-through; font-weight:700}
-    .after{font-size:26px; font-weight:900}
-    .discount{
+    .priceCard:before{
+      content:"";
+      position:absolute; inset:-50% auto auto -50%;
+      width:240px; height:240px; border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, rgba(175,73,119,.35), transparent 62%);
+      filter: blur(2px);
+      transform: rotate(20deg);
+    }
+    .priceRow{
+      display:flex; gap:12px; align-items:flex-end; flex-wrap:wrap;
+      position:relative;
+    }
+    .before{
+      color:#C9D2ED; opacity:.75; text-decoration: line-through; font-weight:800;
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.12);
+      padding:8px 10px; border-radius:999px;
+    }
+    .after{
+      font-size:30px; font-weight:1000; letter-spacing:.2px;
+    }
+    .after small{font-size:14px; color:var(--muted); font-weight:800}
+    .save{
       display:inline-flex; gap:8px; align-items:center;
       padding:8px 10px; border-radius:999px;
       background: rgba(53,208,127,.12);
       border:1px solid rgba(53,208,127,.25);
       color:#BFF7D9;
-      font-weight:900;
+      font-weight:1000;
       white-space:nowrap;
+    }
+    .disc{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 10px; border-radius:999px;
+      background: rgba(255,207,90,.10);
+      border:1px solid rgba(255,207,90,.22);
+      color:#FFE9A6;
+      font-weight:1000;
     }
     .mini{
       margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;
-      color:var(--muted); font-size:12px;
+      color:var(--muted); font-size:12px; position:relative;
     }
     .mini .tag{
       border:1px solid rgba(255,255,255,.14);
@@ -271,7 +290,7 @@
       list-style:none; cursor:pointer;
       padding:12px 12px;
       display:flex; align-items:center; justify-content:space-between; gap:12px;
-      font-weight:800;
+      font-weight:900;
     }
     summary::-webkit-details-marker{display:none}
     .faq p{margin:0; padding:0 12px 12px; color:var(--muted); line-height:1.9}
@@ -331,41 +350,6 @@
       50%{transform: translateY(-12px) translateX(10px) rotate(-6deg)}
     }
 
-    /* order form placeholder */
-    .orderBox{
-      border:1px dashed rgba(255,255,255,.22);
-      background: rgba(255,255,255,.04);
-      border-radius: 18px;
-      padding:14px;
-    }
-    .orderBox .note{
-      color:var(--muted);
-      font-size:12px;
-      line-height:1.9;
-      margin-top:8px;
-    }
-
-    /* sticky footer CTA */
-    .sticky{
-      position:fixed; left:0; right:0; bottom:0;
-      background: linear-gradient(180deg, rgba(7,10,18,0), rgba(7,10,18,.85) 20%, rgba(7,10,18,.95));
-      padding:14px 16px;
-      z-index:30;
-    }
-    .sticky .bar{
-      max-width:1050px; margin:0 auto;
-      display:flex; gap:12px; align-items:center; justify-content:space-between;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      border-radius: 16px;
-      padding:10px 12px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 18px 60px rgba(0,0,0,.55);
-    }
-    .sticky .bar .sprice{font-weight:900}
-    .sticky .bar .smuted{color:var(--muted); font-size:12px}
-    .sticky .bar .btn{padding:10px 14px}
-
     /* reveal animation */
     .reveal{opacity:0; transform: translateY(10px); transition: .55s ease}
     .reveal.show{opacity:1; transform: translateY(0)}
@@ -377,7 +361,7 @@
 
   <div class="wrap">
 
-    <!-- TOP BAR -->
+    <!-- TOP BAR (بدون زر اطلب) -->
     <div class="topbar">
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
@@ -388,11 +372,11 @@
       </div>
       <div class="cta-row">
         <div class="pill">🛡️ <b style="color:#fff">أوريجنال</b> • مضمون</div>
-        <button class="btn" type="button" onclick="scrollToOrder()">اطلبي الآن 💖</button>
+        <div class="pill">🔥 خصم <b style="color:#fff">22.44%</b></div>
       </div>
     </div>
 
-    <!-- HERO (Images فوق + تحتها الوصف + تحتها السعر) -->
+    <!-- HERO -->
     <div class="grid">
       <!-- Gallery -->
       <div class="card gallery reveal">
@@ -418,20 +402,19 @@
           <b>تطويل + تكثيف + فصل</b> مع لون أسود فخم، ومظهر نهائي يليق باللوك اليومي أو المناسبات.
         </p>
 
-        <div class="priceBox">
-          <div>
-            <div class="prices">
-              <span class="before">450 جنيه</span>
-              <span class="after">349 جنيه</span>
-              <span class="discount">✅ وفر 101 جنيه</span>
-            </div>
-            <div class="mini">
-              <div class="tag">🚚 شحن سريع</div>
-              <div class="tag">💳 دفع عند الاستلام (حسب المتاح)</div>
-              <div class="tag">🛡️ ضمان الأصالة 100%</div>
-            </div>
+        <!-- PRICE BLOCK (شيك بدل الفورم) -->
+        <div class="priceCard">
+          <div class="priceRow">
+            <span class="before">450 جنيه</span>
+            <div class="after">349 <small>جنيه</small></div>
+            <span class="save">✅ وفر 101 جنيه</span>
+            <span class="disc">🔥 خصم 22.44%</span>
           </div>
-          <button class="btn" type="button" onclick="scrollToOrder()">اطلبي الآن ✨</button>
+          <div class="mini">
+            <div class="tag">🚚 شحن سريع</div>
+            <div class="tag">💳 دفع عند الاستلام (حسب المتاح)</div>
+            <div class="tag">🛡️ ضمان الأصالة 100%</div>
+          </div>
         </div>
 
         <div class="section" style="margin-top:14px">
@@ -461,26 +444,6 @@
           </div>
         </div>
 
-      </div>
-    </div>
-
-    <!-- ORDER FORM -->
-    <div class="section reveal" id="order">
-      <div class="card pad">
-        <h2><span class="dot"></span>اطلبي دلوقتي</h2>
-
-        <div class="orderBox">
-          <!-- 👇👇 هنا بتحطي فورم EasyOrders (نموذج الطلب/زر الشراء) -->
-          <!-- الصقي كود EasyOrders هنا -->
-          <div style="padding:14px;border-radius:14px;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.12);">
-            <b>⬅️ الصقي هنا كود الفورم بتاع EasyOrders</b>
-            <div class="note">
-              لو عندك كود الفورم، انسخيه وحطيه هنا مكان البلوك ده.
-            </div>
-          </div>
-          <!-- 👆👆 -->
-          <div class="note">💡 نصيحة: خلي الفورم بعد السعر مباشرة (زي ما هو هنا) علشان التحويل يبقى أعلى.</div>
-        </div>
       </div>
     </div>
 
@@ -672,17 +635,6 @@
 
   </div>
 
-  <!-- Sticky CTA -->
-  <div class="sticky">
-    <div class="bar">
-      <div>
-        <div class="sprice">349 جنيه <span class="smuted">بدل 450 • خصم 22.44%</span></div>
-        <div class="smuted">🛡️ أوريجنال 100% • 🚚 شحن سريع</div>
-      </div>
-      <button class="btn" type="button" onclick="scrollToOrder()">اطلبي الآن 💖</button>
-    </div>
-  </div>
-
   <script>
     // صور المنتج
     const images = [
@@ -759,13 +711,7 @@
       reviewsWrap.appendChild(div);
     });
 
-    // Scroll to order
-    function scrollToOrder(){
-      const el = document.getElementById("order");
-      el.scrollIntoView({behavior:"smooth", block:"start"});
-    }
-
-    // Reveal on scroll (simple + جذاب)
+    // Reveal on scroll
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
         if(e.isIntersecting){ e.target.classList.add("show"); io.unobserve(e.target); }
